@@ -5,7 +5,14 @@ node_modules/
 
 # Testing
 coverage/
+coverage-e2e/
 *.log
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/e2e/screenshots/
 
 # Next.js
 .next/

@@ -10,21 +10,31 @@
     "build": "pnpm run --recursive build",
     "build:frontend": "pnpm --filter frontend build",
     "build:backend": "pnpm --filter backend build",
+    "test": "pnpm run --recursive test",
+    "test:backend": "pnpm --filter backend test",
+    "test:frontend": "pnpm --filter frontend test",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report",
     "lint": "pnpm run --recursive lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "docker:up": "docker-compose up -d",
     "docker:down": "docker-compose down",
     "db:migrate": "pnpm --filter backend prisma:migrate",
-    "db:studio": "pnpm --filter backend prisma:studio"
+    "db:studio": "pnpm --filter backend prisma:studio",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.56.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.3.3",
     "husky": "^9.0.10",
-    "lint-staged": "^15.2.0"
+    "lint-staged": "^15.2.0",
+    "playwright": "^1.56.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
   },
   "engines": {
     "node": ">=18.0.0",
