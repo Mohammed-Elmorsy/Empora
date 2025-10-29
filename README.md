@@ -1,6 +1,6 @@
-# E-Commerce Platform
+# Empora
 
-A modern, full-stack e-commerce platform built with Next.js 15 and Nest.js using a monorepo architecture.
+A modern, full-stack e-commerce platform built with Next.js 15 and Nest.js using a monorepo architecture and Test-Driven Development (TDD).
 
 ## Tech Stack
 

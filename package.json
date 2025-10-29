@@ -1,8 +1,8 @@
 {
-  "name": "ecommerce-monorepo",
+  "name": "empora",
   "version": "1.0.0",
   "private": true,
-  "description": "Modern e-commerce platform with Next.js and Nest.js",
+  "description": "Empora - Modern e-commerce platform with Next.js and Nest.js using TDD",
   "scripts": {
     "dev": "pnpm run --parallel dev",
     "dev:frontend": "pnpm --filter frontend dev",
