@@ -49,6 +49,9 @@ pnpm-debug.log*
 # Prisma
 prisma/migrations/
 
+# Claude Code
+.claude/*.local.*
+
 # Misc
 *.pem
 .turbo
