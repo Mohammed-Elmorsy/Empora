@@ -156,6 +156,7 @@ jobs:
   e2e-tests:
     name: E2E Tests (Playwright)
     runs-on: ubuntu-latest
+    if: false # TODO: Enable when E2E tests are written
     services:
       postgres:
         image: postgres:16-alpine
