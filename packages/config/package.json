@@ -1,0 +1,17 @@
+{
+  "name": "@empora/config",
+  "version": "1.0.0",
+  "description": "Shared configuration utilities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@nestjs/config": "^3.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

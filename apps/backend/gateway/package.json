@@ -1,0 +1,35 @@
+{
+  "name": "gateway",
+  "version": "1.0.0",
+  "description": "API Gateway for Empora microservices",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "dev": "nest start --watch",
+    "start:prod": "node dist/main",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage"
+  },
+  "dependencies": {
+    "@empora/common": "workspace:*",
+    "@empora/config": "workspace:*",
+    "@nestjs/axios": "^4.0.1",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^3.2.0",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/platform-express": "^11.0.1",
+    "axios": "^1.6.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/testing": "^11.0.0",
+    "@types/node": "^22.0.0",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.0.0",
+    "typescript": "^5.3.3"
+  }
+}

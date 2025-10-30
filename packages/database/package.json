@@ -1,0 +1,18 @@
+{
+  "name": "@empora/database",
+  "version": "1.0.0",
+  "description": "Database utilities and Prisma clients",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.2.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.2.0",
+    "typescript": "^5.3.3"
+  }
+}
