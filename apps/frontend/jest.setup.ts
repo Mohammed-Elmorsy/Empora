@@ -33,9 +33,6 @@ jest.mock('next/image', () => ({
   default: (props: any) => props,
 }));
 
-// Set test environment
-process.env.NODE_ENV = 'test';
-
 // Extend Jest timeout
 jest.setTimeout(10000);
 
