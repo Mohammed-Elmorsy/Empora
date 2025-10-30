@@ -306,7 +306,9 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          extra_args: --since-commit ${{ github.event.before }} --only-verified
+          base: ${{ github.event.before }}
+          head: HEAD
+          extra_args: --only-verified
 
   build:
     name: Build Check
