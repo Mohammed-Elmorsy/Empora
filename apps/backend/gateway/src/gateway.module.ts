@@ -4,6 +4,7 @@ import { HttpModule } from '@nestjs/axios';
 import { HealthController } from './health/health.controller';
 import { AuthProxyController } from './proxy/auth-proxy.controller';
 import { ProductProxyController } from './proxy/product-proxy.controller';
+import { CategoriesProxyController } from './proxy/categories-proxy.controller';
 import { ProxyService } from './proxy/proxy.service';
 
 @Module({
@@ -17,7 +18,12 @@ import { ProxyService } from './proxy/proxy.service';
       maxRedirects: 5,
     }),
   ],
-  controllers: [HealthController, AuthProxyController, ProductProxyController],
+  controllers: [
+    HealthController,
+    AuthProxyController,
+    ProductProxyController,
+    CategoriesProxyController,
+  ],
   providers: [ProxyService],
 })
 export class GatewayModule {}

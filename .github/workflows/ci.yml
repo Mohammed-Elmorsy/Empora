@@ -156,7 +156,6 @@ jobs:
   e2e-tests:
     name: E2E Tests (Playwright)
     runs-on: ubuntu-latest
-    if: false # TODO: Enable when E2E tests are written
     services:
       postgres:
         image: postgres:16-alpine
@@ -220,6 +219,12 @@ jobs:
           DATABASE_URL: postgresql://test:test@localhost:5432/empora_test
         run: npx prisma migrate deploy
 
+      - name: Seed database - Product Service
+        working-directory: apps/backend/product-service
+        env:
+          DATABASE_URL: postgresql://test:test@localhost:5432/empora_test
+        run: npx ts-node prisma/seed.ts
+
       - name: Build applications
         run: pnpm build
 
@@ -245,19 +250,22 @@ jobs:
         working-directory: apps/backend/gateway
         env:
           PORT: 3001
+          AUTH_SERVICE_URL: http://localhost:3002
+          PRODUCT_SERVICE_URL: http://localhost:3003
         run: pnpm start &
 
       - name: Start frontend
         working-directory: apps/frontend
         env:
-          NEXT_PUBLIC_API_URL: http://localhost:3001/api/v1
+          NEXT_PUBLIC_API_URL: http://localhost:3001/api
         run: pnpm start &
 
       - name: Wait for services
         run: |
-          npx wait-on http://localhost:3000 http://localhost:3001/api/v1/health --timeout 60000
+          npx wait-on http://localhost:3000 http://localhost:3001/api/health --timeout 60000
 
       - name: Run Playwright tests
+        working-directory: apps/frontend
         run: pnpm test:e2e
 
       - name: Upload Playwright report

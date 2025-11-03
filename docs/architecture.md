@@ -11,12 +11,14 @@ This e-commerce platform follows a modern monorepo architecture with separate fr
 │                         Client Layer                         │
 │                                                              │
 │  ┌──────────────────────────────────────────────────────┐  │
-│  │          Next.js 15 Frontend (Port 3000)             │  │
+│  │          Next.js 16 Frontend (Port 3000)             │  │
 │  │                                                       │  │
 │  │  - React 19 with TypeScript                          │  │
-│  │  - Tailwind CSS for styling                          │  │
+│  │  - Tailwind CSS 4 for styling                        │  │
 │  │  - Server Components & Client Components             │  │
 │  │  - TanStack Query for data fetching                  │  │
+│  │  - Zustand for state management                      │  │
+│  │  - Shadcn UI utilities                               │  │
 │  └──────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
                               ↓
@@ -50,14 +52,17 @@ This e-commerce platform follows a modern monorepo architecture with separate fr
 ## Technology Stack
 
 ### Frontend
-- **Framework**: Next.js 15 with App Router
+
+- **Framework**: Next.js 16 with App Router
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: Zustand (planned)
-- **Data Fetching**: TanStack Query (planned)
-- **Forms**: React Hook Form + Zod (planned)
+- **Styling**: Tailwind CSS 4
+- **UI Components**: Shadcn UI utilities (class-variance-authority, clsx, tailwind-merge)
+- **State Management**: Zustand with persist middleware
+- **Data Fetching**: TanStack Query (React Query) with DevTools
+- **Forms**: React Hook Form + Zod
 
 ### Backend
+
 - **Framework**: Nest.js 11
 - **Language**: TypeScript
 - **ORM**: Prisma
@@ -65,11 +70,13 @@ This e-commerce platform follows a modern monorepo architecture with separate fr
 - **Authentication**: JWT + Passport (planned)
 
 ### Database
+
 - **Primary DB**: PostgreSQL 16
 - **Caching**: Redis 7
 - **ORM**: Prisma
 
 ### Infrastructure
+
 - **Container**: Docker & Docker Compose
 - **Package Manager**: pnpm
 - **Monorepo**: pnpm workspaces
@@ -79,12 +86,14 @@ This e-commerce platform follows a modern monorepo architecture with separate fr
 ## Design Patterns
 
 ### Backend
+
 - **Repository Pattern**: Data access abstraction through Prisma
 - **Service Layer**: Business logic separated from controllers
 - **DTO Pattern**: Data Transfer Objects for validation
 - **Dependency Injection**: Native Nest.js DI container
 
 ### Frontend
+
 - **Component Composition**: Reusable UI components
 - **Server Components**: For data fetching and SEO
 - **Client Components**: For interactivity

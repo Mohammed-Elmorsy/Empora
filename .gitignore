@@ -13,6 +13,8 @@ coverage-e2e/
 /playwright-report/
 /playwright/.cache/
 /e2e/screenshots/
+apps/frontend/test-results/
+apps/frontend/playwright-report/
 
 # Next.js
 .next/
@@ -22,6 +24,9 @@ build/
 
 # Nest.js
 dist/
+
+# TypeScript build artifacts
+*.tsbuildinfo
 
 # Environment variables
 .env
@@ -39,6 +44,9 @@ dist/
 # OS
 .DS_Store
 Thumbs.db
+
+# Windows error output files
+nul
 
 # Debug
 npm-debug.log*

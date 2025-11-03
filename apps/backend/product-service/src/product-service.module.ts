@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { HealthController } from './health/health.controller';
-import { PrismaService } from './prisma/prisma.service';
+import { PrismaModule } from './prisma/prisma.module';
+import { ProductModule } from './product/product.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -9,9 +11,11 @@ import { PrismaService } from './prisma/prisma.service';
       isGlobal: true,
       envFilePath: '.env',
     }),
+    PrismaModule,
+    ProductModule,
+    CategoriesModule,
     // RabbitMQ will be added in next milestone
   ],
   controllers: [HealthController],
-  providers: [PrismaService],
 })
 export class ProductServiceModule {}

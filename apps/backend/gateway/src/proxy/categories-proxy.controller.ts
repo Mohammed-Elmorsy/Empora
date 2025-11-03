@@ -3,8 +3,8 @@ import { Request, Response } from 'express';
 import { ConfigService } from '@nestjs/config';
 import { ProxyService } from './proxy.service';
 
-@Controller('products')
-export class ProductProxyController {
+@Controller('categories')
+export class CategoriesProxyController {
   private readonly serviceUrl: string;
 
   constructor(
@@ -25,10 +25,10 @@ export class ProductProxyController {
   }
 
   private async handleProxy(req: Request, res: Response) {
-    // Extract the path after /api/products and prepend /products for the service
-    const fullPath = req.url.replace('/api/products', '');
+    // Extract the path after /api/categories and prepend /categories for the service
+    const fullPath = req.url.replace('/api/categories', '');
     const pathOnly = fullPath.split('?')[0] || '';
-    const servicePath = `/products${pathOnly}`;
+    const servicePath = `/categories${pathOnly}`;
     const method = req.method;
     const data = req.body;
     const headers = req.headers as Record<string, string>;
